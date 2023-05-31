@@ -1,0 +1,28 @@
+{
+  "offre": [
+    {
+      "id": 1,
+      "title": "data analyst",
+      "company": "vermeg",
+      "description": "it company",
+      "nbCandidate": 19
+    },
+    {
+      "id": 2,
+      "title": "developer web",
+      "company": "sofrecom",
+      "description": "company it",
+      "nbCandidate": 30
+    },
+    {
+      "title": "test",
+      "company": "test",
+      "description": "test",
+      "nbCandidate": "20",
+      "id": 3
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

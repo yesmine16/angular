@@ -1,0 +1,12 @@
+<ul class="list-group d-inline-flex d-flex w-100 m-md-4">
+  <div *ngFor="let offer of listOffer" class="d-inline-flex">
+    <li class="list-group-item">{{offer.title}} {{offer.company}} {{offer.description}} {{offer.nbCandidate}}</li>
+    <button class="btn btn-dark m-lg-2" [disabled]="offer.nbCandidate==0" (click)="postuler(offer)"> Postuler </button>
+    <a (click)="navigate(offer.id)" class="link-info " style="cursor: pointer">details offer</a>
+  </div>
+
+</ul>
+
+<div class="container mt-4">
+  <app-add-offer></app-add-offer>
+</div>
