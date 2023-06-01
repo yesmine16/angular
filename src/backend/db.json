@@ -4,14 +4,17 @@
       "id": 1,
       "nom_film": "Bheed",
       "description": "lorem ipsum",
-      "nbPlace": 40
+      "nbPlace": 40,
+      "nomSalle":"Carthage"
+
     },
     
       {
         "id": 1,
         "nom_film": "L'Arnacoeur",
         "description": "lorem ipsum",
-        "nbPlace": 20
+        "nbPlace": 20,
+        "nomSalle":"Carthage"
       }
   ]
 }
