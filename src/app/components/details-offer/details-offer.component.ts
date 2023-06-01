@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ServicesService} from "../../services/services.service";
-import {Offer} from "../../models/offer.model";
+import {Movies} from "../../models/movies";
 import {of} from "rxjs";
 
 @Component({
@@ -10,8 +10,9 @@ import {of} from "rxjs";
   styleUrls: ['./details-offer.component.css']
 })
 export class DetailsOfferComponent implements OnInit {
+
 idOffer!:any;
-offer!:Offer;
+offer!:Movies;
   constructor(private activatedRoute:ActivatedRoute,private offerService:ServicesService) { }
 
   ngOnInit(): void {
@@ -31,4 +32,8 @@ offer!:Offer;
   }
 
   protected readonly of = of;
+
+  supprimer(id: any) {
+    this.offerService.removeMovies(id).subscribe();
+  }
 }

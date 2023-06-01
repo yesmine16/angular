@@ -1,11 +1,9 @@
-<div class="container mt-5">
-  <h1>add product</h1>
-
+<div >
   <form #f="ngForm">
-    <div class="row">
-      <div class="col-md-3">
-        <label>title</label>
-        <input type="text"name="title" class="form-control" ngModel required minlength="3" #t="ngModel">
+    <div >
+      <div >
+        <label>film</label>
+        <input type="text"name="nom_film"  ngModel required minlength="3" #t="ngModel">
         <div *ngIf="t.invalid && t.touched">
           <div *ngIf="t.errors?.['required']">
             required
@@ -15,22 +13,22 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3">
-        <label>price</label>
-        <input type="text" name="price" class="form-control" ngModel  #price="ngModel" pattern="[0-9]^">
-        <div *ngIf="price.invalid ">
+      <div>
+        <label>Description</label>
+        <input type="text" name="description" ngModel  #description="ngModel" pattern="[0-9]^">
+        <!-- <div *ngIf="price.invalid ">
           <div *ngIf="price.errors?.['pattern']">
             price error
           </div>
 
-        </div>
+        </div> -->
       </div>
       <div  class="col-md-3">
-        <label>quantity</label>
-        <input type="text"  class="form-control" name="quantity"  ngModel  #q="ngModel" pattern="[0-9]^">
+        <label>Nombre de place</label>
+        <input type="number"  class="form-control" name="quantity"  ngModel  #q="ngModel" pattern="[0-9]^">
         <div *ngIf="q.invalid ">
           <div *ngIf="q.errors?.['pattern']">
-            quantity error
+            erreur
           </div>
 
         </div>

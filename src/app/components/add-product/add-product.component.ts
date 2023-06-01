@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ServicesService } from 'src/app/services/services.service';
 
 @Component({
   selector: 'app-add-product',
@@ -7,11 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpClient,private service:ServicesService) { }
   formValue = {
-    title: '',
-    price: null,
-    quantity: null
+    film: '',
+    desc: null,
+    nb: null
   };
   ngOnInit(): void {
   }
@@ -21,5 +23,7 @@ export class AddProductComponent implements OnInit {
     console.log(form)
   }
   save(valueOfForm:any){
-   console.log(valueOfForm);}
-}
+    this.service.addMovie(valueOfForm).subscribe(
+      
+    );
+}}

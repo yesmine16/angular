@@ -1,12 +1,25 @@
-<ul class="list-group d-inline-flex d-flex w-100 m-md-4">
-  <div *ngFor="let offer of listOffer" class="d-inline-flex">
-    <li class="list-group-item">{{offer.title}} {{offer.company}} {{offer.description}} {{offer.nbCandidate}}</li>
-    <button class="btn btn-dark m-lg-2" [disabled]="offer.nbCandidate==0" (click)="postuler(offer)"> Postuler </button>
-    <a (click)="navigate(offer.id)" class="link-info " style="cursor: pointer">details offer</a>
+<table>
+  <div *ngFor="let movies of listOffer">
+    <th>id</th>
+    <th>Film</th>
+    <th>Salle</th>
+    <th>Description</th>
+    <th>nbPlace</th>
+    <th>raiting</th>
+    <td>{{movies.id}}</td>
+    <td> {{movies.nom_film}}</td>
+    <td> {{movies.nomSalle}}</td>
+    <td> {{movies.description}}</td>
+    <td> {{movies.nbPlace}}</td>
+    <td> {{movies.rating}}</td>
+
+    <!-- <button class="btn btn-dark m-lg-2" [disabled]="movies.nbCandidate==0" (click)="postuler(movies)"> Postuler
+    </button> -->
+    <a (click)="navigate(movies.id)" class="link-info " style="cursor: pointer">details movies</a>
   </div>
 
-</ul>
+</table>
 
-<div class="container mt-4">
+<div >
   <app-add-offer></app-add-offer>
 </div>

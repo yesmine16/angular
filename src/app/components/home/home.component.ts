@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ServicesService} from "../../services/services.service";
-import {Offer} from "../../models/offer.model";
-import {of} from "rxjs";
+import {Movies} from "../../models/movies";
 import {Router} from "@angular/router";
 
 @Component({
@@ -11,35 +10,34 @@ import {Router} from "@angular/router";
 })
 export class HomeComponent implements OnInit {
 
-  listOffer!:Offer[];
+  listOffer!:Movies[];
   constructor(private OffreService:ServicesService,private router:Router) { }
 
   ngOnInit(): void {
-   this.getallOffers();
   }
 
 
-  postuler(offer: Offer) {
-  offer.nbCandidate=offer.nbCandidate-1;
-  console.log(offer.nbCandidate);
-  this.OffreService.updateOffre(offer,offer.id).subscribe(
-    data=>{
-      this.getallOffers()
-    },
-    error => console.log(error)
-  )
+  postuler(offer: Movies) {
+  // offer.nbCandidate=offer.nbCandidate-1;
+  // console.log(offer.nbCandidate);
+  // this.OffreService.updateOffre(offer,offer.id).subscribe(
+  //   data=>{
+  //     this.getallOffers()
+  //   },
+  //   error => console.log(error)
+  // )
   }
 
-  private getallOffers() {
-    this.OffreService.fetchOffers().subscribe(
-      data=>{
-        this.listOffer=data;
-      },
-      error=>{
-        console.log();
-      }
-    )
-  }
+  // private getallOffers() {
+  //   this.OffreService.fetchMovies().subscribe(
+  //     data=>{
+  //       this.listOffer=data;
+  //     },
+  //     error=>{
+  //       console.log();
+  //     }
+  //   )
+  // }
 
   navigate(id: number) {
     this.router.navigate(['/details',id]);

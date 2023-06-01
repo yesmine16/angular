@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Offer} from "../models/offer.model";
+import {Movies} from "../models/movies";
 import {Observable} from "rxjs";
 
 @Injectable({
@@ -10,19 +10,19 @@ export class ServicesService {
 
   constructor(private http:HttpClient) { }
 
-  fetchOffers(){
-    return this.http.get<Offer[]>(' http://localhost:3000/offre')
+  fetchMovies(){
+    return this.http.get<Movies[]>(' http://localhost:3000/movie')
   }
-  addOffer(data:Offer){
-    return this.http.post<Offer>('http://localhost:3000/offre',data);
+  addMovie(data:Movies){
+    return this.http.post<Movies>('http://localhost:3000/movie',data);
   }
-  removeOffer(id:any){
-    return this.http.delete<Offer>('http://localhost:3000/offre/'+id);
+  removeMovies(id:any){
+    return this.http.delete<Movies>('http://localhost:3000/movie/'+id);
   }
   getOffreById(id:any){
-    return this.http.get<Offer>('http://localhost:3000/offre/'+id)
+    return this.http.get<Movies>('http://localhost:3000/movie/'+id)
   }
-  updateOffre(data:Offer,id:any):Observable<Offer>{
-    return this.http.put<Offer>('http://localhost:3000/offre/'+id,data)
+  updateOffre(data:Movies,id:any):Observable<Movies>{
+    return this.http.put<Movies>('http://localhost:3000/movie/'+id,data)
   }
 }

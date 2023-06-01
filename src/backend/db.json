@@ -1,28 +1,17 @@
 {
-  "offre": [
+  "movie": [
     {
       "id": 1,
-      "title": "data analyst",
-      "company": "vermeg",
-      "description": "it company",
-      "nbCandidate": 19
+      "nom_film": "Bheed",
+      "description": "lorem ipsum",
+      "nbPlace": 40
     },
-    {
-      "id": 2,
-      "title": "developer web",
-      "company": "sofrecom",
-      "description": "company it",
-      "nbCandidate": 30
-    },
-    {
-      "title": "test",
-      "company": "test",
-      "description": "test",
-      "nbCandidate": "20",
-      "id": 3
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+    
+      {
+        "id": 1,
+        "nom_film": "L'Arnacoeur",
+        "description": "lorem ipsum",
+        "nbPlace": 20
+      }
+  ]
 }
