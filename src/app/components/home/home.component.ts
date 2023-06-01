@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(private OffreService:ServicesService,private router:Router) { }
 
   ngOnInit(): void {
+    this.getallOffers();
   }
 
 
@@ -28,16 +29,16 @@ export class HomeComponent implements OnInit {
   // )
   }
 
-  // private getallOffers() {
-  //   this.OffreService.fetchMovies().subscribe(
-  //     data=>{
-  //       this.listOffer=data;
-  //     },
-  //     error=>{
-  //       console.log();
-  //     }
-  //   )
-  // }
+  private getallOffers() {
+    this.OffreService.fetchMovies().subscribe(
+      data=>{
+        this.listOffer=data;
+      },
+      error=>{
+        console.log();
+      }
+    )
+  }
 
   navigate(id: number) {
     this.router.navigate(['/details',id]);

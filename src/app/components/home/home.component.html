@@ -1,25 +1,26 @@
-<table>
-  <div *ngFor="let movies of listOffer">
+<table *ngFor="let movies of listOffer">
+  <tr>
     <th>id</th>
     <th>Film</th>
     <th>Salle</th>
     <th>Description</th>
     <th>nbPlace</th>
-    <th>raiting</th>
+    <th>raiting</th></tr>
+    <tr>
     <td>{{movies.id}}</td>
     <td> {{movies.nom_film}}</td>
     <td> {{movies.nomSalle}}</td>
     <td> {{movies.description}}</td>
     <td> {{movies.nbPlace}}</td>
     <td> {{movies.rating}}</td>
-
+  </tr>
     <!-- <button class="btn btn-dark m-lg-2" [disabled]="movies.nbCandidate==0" (click)="postuler(movies)"> Postuler
     </button> -->
     <a (click)="navigate(movies.id)" class="link-info " style="cursor: pointer">details movies</a>
-  </div>
 
 </table>
+<div  *ngFor="let movies of listOffer">
+  <p>{{movies.id}}</p>
 
-<div >
-  <app-add-offer></app-add-offer>
 </div>
+<app-add-product></app-add-product>
